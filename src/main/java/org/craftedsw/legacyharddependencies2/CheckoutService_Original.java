@@ -4,10 +4,11 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 import java.util.List;
+import java.util.Map;
 
 public class CheckoutService_Original {
 
-	public void makePayment(List<Item> items, User user) throws Exception {
+	public void makePayment(Map<Item, Integer> items, User user) throws Exception {
 		if (items.size() == 0) {
 			return;
 		}

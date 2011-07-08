@@ -6,11 +6,11 @@ import java.util.List;
 public class TripService {
 
 	public List<Trip> getTripsByUser(User user) throws UserNotLoggedInException {
-		userMustBeLoggedIn(); 
+		verifyIfThereIsALoggedUser(); 
 		return getAllTripsForUser(user);
 	}
 
-	private void userMustBeLoggedIn() throws UserNotLoggedInException {
+	private void verifyIfThereIsALoggedUser() throws UserNotLoggedInException {
 		if (loggedUser() == null) {
 			throw new UserNotLoggedInException();
 		}

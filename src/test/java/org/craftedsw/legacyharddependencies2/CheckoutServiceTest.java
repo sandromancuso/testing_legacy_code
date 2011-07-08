@@ -4,6 +4,7 @@ import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyDouble;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -16,6 +17,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.runners.MockitoJUnitRunner;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -76,6 +78,20 @@ public class CheckoutServiceTest {
 		 checkoutService.makePayment(basket, user);
 		 
 		 salesShouldNeverBeProcessed();		 
+	}
+	
+	@Test(expected=Exception.class) public void 
+	shouldThrowExceptionIfPaymentIsNotProcessed() throws Exception {
+		when(paymentGateway.processSale(any(User.class), any(Card.class), anyDouble()))
+				.thenReturn(false);
+		aBasketWithOneItem();
+		Card mainCard = new Card();
+		mainCard.setMainCard(true);
+		user.addCard(mainCard);
+
+		checkoutService.makePayment(basket, user);
+		
+//		salesShouldNeverBeProcessed();
 	}
 
 	private User aUserWithoutMainCard() {
