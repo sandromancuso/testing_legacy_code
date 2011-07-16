@@ -1,22 +1,36 @@
 package org.craftedsw.legacyharddependencies;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class User {
 
+	private List<Trip> trips = new ArrayList<Trip>();
+	private List<User> friends = new ArrayList<User>();
+	
 	public List<User> getFriends() {
-		return null;
+		return friends;
 	}
 	
+	public void addFriend(User user) {
+		friends.add(user);
+	}
+
 	public boolean isFriendsWith(User user) {
-		boolean isFriend = false;
-		for (User friend : user.getFriends()) {
+		for (User friend : friends) {
 			if (friend.equals(user)) {
-				isFriend = true;
-				break;
+				return true;
 			}
 		}
-		return isFriend;
+		return false;
+	}
+	
+	public void addTrip(Trip trip) {
+		trips.add(trip);
+	}
+	
+	public List<Trip> trips() {
+		return trips;
 	}
 
 }
