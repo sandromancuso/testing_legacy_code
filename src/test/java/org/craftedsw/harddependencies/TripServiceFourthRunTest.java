@@ -1,12 +1,16 @@
-package org.craftedsw.legacyharddependencies;
+package org.craftedsw.harddependencies;
 
-import static org.craftedsw.legacyharddependencies.UserBuilder.anUser;
+import static org.craftedsw.harddependencies.UserBuilder.anUser;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 import java.util.List;
 
+import org.craftedsw.harddependencies.exception.UserNotLoggedInException;
+import org.craftedsw.harddependencies.trip.Trip;
+import org.craftedsw.harddependencies.trip.TripService;
+import org.craftedsw.harddependencies.user.User;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -16,7 +20,7 @@ public class TripServiceFourthRunTest {
 	private User UNUSED_USER = new User();
 	private User LOGGED_USER = new User();
 	
-	private TripServiceThridRun tripService;
+	private TripService tripService;
 	
 	@Before
 	public void initialise() {
@@ -46,9 +50,9 @@ public class TripServiceFourthRunTest {
 		assertThat(friendTrips, is(equalTo(john.trips())));
 	}
 
-	protected TripServiceThridRun createTripService() {
-		return new TripServiceThridRun() {
-			@Override protected List<Trip> findTripsByUser(User user) {
+	protected TripService createTripService() {
+		return new TripService() {
+			@Override protected List<Trip> findTripsForFriend(User user) {
 				return user.trips();
 			}
 		};

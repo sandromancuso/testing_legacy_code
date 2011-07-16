@@ -1,4 +1,4 @@
-package org.craftedsw.legacyharddependencies;
+package org.craftedsw.harddependencies.exception;
 
 public class DependendClassCallDuringUnitTestException extends RuntimeException {
 

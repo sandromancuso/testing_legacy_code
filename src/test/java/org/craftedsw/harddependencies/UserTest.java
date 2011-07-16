@@ -1,8 +1,9 @@
-package org.craftedsw.legacyharddependencies;
+package org.craftedsw.harddependencies;
 
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
+import org.craftedsw.harddependencies.user.User;
 import org.junit.Test;
 
 public class UserTest {

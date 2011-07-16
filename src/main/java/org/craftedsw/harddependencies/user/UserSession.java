@@ -1,4 +1,6 @@
-package org.craftedsw.legacyharddependencies;
+package org.craftedsw.harddependencies.user;
+
+import org.craftedsw.harddependencies.exception.DependendClassCallDuringUnitTestException;
 
 public class UserSession {
 

@@ -1,7 +1,13 @@
-package org.craftedsw.legacyharddependencies;
+package org.craftedsw.harddependencies;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.craftedsw.harddependencies.exception.UserNotLoggedInException;
+import org.craftedsw.harddependencies.trip.Trip;
+import org.craftedsw.harddependencies.trip.TripDAO;
+import org.craftedsw.harddependencies.user.User;
+import org.craftedsw.harddependencies.user.UserSession;
 
 public class TripService_Original {
 

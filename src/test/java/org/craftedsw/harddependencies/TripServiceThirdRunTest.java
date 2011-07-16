@@ -1,12 +1,16 @@
-package org.craftedsw.legacyharddependencies;
+package org.craftedsw.harddependencies;
 
-import static org.craftedsw.legacyharddependencies.UserBuilder.anUser;
+import static org.craftedsw.harddependencies.UserBuilder.anUser;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
 
 import java.util.List;
 
+import org.craftedsw.harddependencies.exception.UserNotLoggedInException;
+import org.craftedsw.harddependencies.trip.Trip;
+import org.craftedsw.harddependencies.trip.TripService;
+import org.craftedsw.harddependencies.user.User;
 import org.junit.Before;
 import org.junit.Test;
 

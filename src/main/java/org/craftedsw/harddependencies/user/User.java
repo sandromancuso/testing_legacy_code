@@ -1,7 +1,9 @@
-package org.craftedsw.legacyharddependencies;
+package org.craftedsw.harddependencies.user;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import org.craftedsw.harddependencies.trip.Trip;
 
 public class User {
 
