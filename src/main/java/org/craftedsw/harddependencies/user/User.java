@@ -18,13 +18,8 @@ public class User {
 		friends.add(user);
 	}
 
-	public boolean isFriendsWith(User user) {
-		for (User friend : friends) {
-			if (friend.equals(user)) {
-				return true;
-			}
-		}
-		return false;
+	public boolean isFriendsWith(User friend) {
+		return friends.contains(friend);
 	}
 	
 	public void addTrip(Trip trip) {

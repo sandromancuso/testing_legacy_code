@@ -4,6 +4,7 @@ import static org.craftedsw.harddependencies.UserBuilder.anUser;
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ import org.craftedsw.harddependencies.exception.UserNotLoggedInException;
 import org.craftedsw.harddependencies.trip.Trip;
 import org.craftedsw.harddependencies.trip.TripService;
 import org.craftedsw.harddependencies.user.User;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -36,7 +38,7 @@ public class TripServiceFourthRunTest {
 	shouldNotReturnTripsWhenLoggedUserIsNotAFriend() throws Exception {
 		List<Trip> friendTrips = tripService.getFriendTrips(LOGGED_USER, anUser().build());
 		
-		assertThat(friendTrips.size(), is(equalTo(0)));
+		assertTrue(friendTrips.isEmpty());
 	}
 	
 	@Test public void 
