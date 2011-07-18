@@ -1,7 +1,6 @@
 package org.craftedsw.harddependencies;
 
-import static org.hamcrest.core.Is.is;
-import static org.junit.Assert.assertThat;
+import static org.junit.Assert.assertTrue;
 
 import org.craftedsw.harddependencies.user.User;
 import org.junit.Test;
@@ -15,7 +14,7 @@ public class UserTest {
 		
 		John.addFriend(Bob);
 		
-		assertThat(John.isFriendsWith(Bob), is(true));
+		assertTrue(John.isFriendsWith(Bob));
 	}
 	
 }

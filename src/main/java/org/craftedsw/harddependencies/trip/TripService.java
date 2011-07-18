@@ -16,13 +16,10 @@ public class TripService {
 	}
 
 	private void validate(User loggedUser) throws UserNotLoggedInException {
-		if (loggedUser == null) {
-			throw new UserNotLoggedInException();
-		}
+		if (loggedUser == null) throw new UserNotLoggedInException();
 	}
 
-	protected List<Trip> findTripsForFriend(User user) {
-		return TripDAO.findTripsByUser(user);
+	protected List<Trip> findTripsForFriend(User friend) {
+		return TripDAO.findTripsByUser(friend);
 	}
-
 }
