@@ -51,7 +51,7 @@ public class TripServiceTest {
 		assertThat(friendTrips, is(equalTo(john.trips())));
 	}
 
-	protected TripService createTripService() {
+	private TripService createTripService() {
 		return new TripService() {
 			@Override protected List<Trip> findTripsForFriend(User user) {
 				return user.trips();
